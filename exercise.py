@@ -225,6 +225,7 @@ def create_profile(name, age, occupation="Student"):
         TypeError: If name is not str or age is not int
         ValueError: If age is negative
     """
+    return {'name': name, 'age': age, 'occupation': occupation}
   
 
 # Exercise 10: Complex Logic and Multiple Validation
