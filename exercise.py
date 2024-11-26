@@ -138,6 +138,12 @@ def calculate_bmi(weight, height):
         ValueError: If weight or height is negative or zero
         TypeError: If inputs are not numbers
     """
+    if weight <= 0 or height <= 0:
+        raise ValueError("Weight and height must be positive")
+    if not isinstance(weight, (int, float)) or not isinstance(height, (int, float)):
+        raise TypeError("Weight and height must be numbers")
+    bmi = weight / height ** 2
+    return round(bmi, 1)
   
 
 # Exercise 7: Recursion with Base Case and Error Handling
