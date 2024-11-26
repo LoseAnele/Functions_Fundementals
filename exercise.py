@@ -199,6 +199,13 @@ def analyze_numbers(numbers):
         >>> print(f"Average: {stats['average']}")
         Average: 3.0
     """
+    if not isinstance(numbers, list):
+        raise TypeError("Numbers must be a list")
+    if not numbers:
+        raise ValueError("Numbers list cannot be empty")
+    sum_numbers = sum(numbers)
+    average = sum_numbers / len(numbers)
+    return {'sum': sum_numbers, 'average': average, 'maximum': max(numbers), 'minimum': min(numbers)}
   
 
 # Exercise 9: Default Parameters and Type Checking
