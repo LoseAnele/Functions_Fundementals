@@ -1,3 +1,6 @@
+import math
+import re
+
 """
 Python Functions Workshop Exercises
 ---------------------------------
@@ -38,6 +41,9 @@ def personalized_greeting(name):
         >>> personalized_greeting(123)
         Raises TypeError
     """
+    if not isinstance(name, str):
+        raise TypeError("Name must be a string")
+    return f"Hello, {name}!"
   
 
 # Exercise 3: Multiple Parameters and Default Values
