@@ -115,6 +115,11 @@ def get_circle_properties(radius):
         >>> print(f"Area: {area:.2f}, Circumference: {circumference:.2f}")
         Area: 3.14, Circumference: 6.28
     """
+    if radius < 0:
+        raise ValueError("Radius must be non-negative")
+    area = math.pi * radius ** 2
+    circumference = 2 * math.pi * radius
+    return area, circumference
   
 
 # Exercise 6: Input Validation and Error Handling
