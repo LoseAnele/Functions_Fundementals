@@ -92,6 +92,11 @@ def update_score(points):
     - Shadowing global variables
     - Overusing global variables
     """
+    global score
+    if not isinstance(points, int):
+        raise TypeError("Points must be an integer")
+    score += points
+    return score
     
 
 # Exercise 5: Multiple Return Values and Tuple Unpacking
