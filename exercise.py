@@ -267,6 +267,13 @@ def validate_password(password):
     - Not checking all criteria independently
     - Forgetting to validate input type before processing
     """
+    if not isinstance(password, str):
+        raise TypeError("Password must be a string")
+    if len(password) < 8:
+        return False
+    if not re.search(r'(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])', password):
+        return False
+    return True
 
 
 
