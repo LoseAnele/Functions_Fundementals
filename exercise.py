@@ -166,6 +166,13 @@ def factorial(n):
     - Not handling negative numbers
     - Not considering stack overflow
     """
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
   
 
 # Exercise 8: Complex Return Types and Dictionary Handling
