@@ -225,6 +225,12 @@ def create_profile(name, age, occupation="Student"):
         TypeError: If name is not str or age is not int
         ValueError: If age is negative
     """
+    if not isinstance(name, str):
+        raise TypeError("Name must be a string")
+    if not isinstance(age, int):
+        raise TypeError("Age must be an integer")
+    if age < 0:
+        raise ValueError("Age must be non-negative")
     return {'name': name, 'age': age, 'occupation': occupation}
   
 
